@@ -15,14 +15,14 @@ echo "Installing vagen dependencies..."
 pip install 'qwen-vl-utils'
 pip install 'mathruler'
 pip install 'matplotlib'
-pip install 'flask'
+pip install 'flask' --ignore-installed blinker
 
 
-echo "Installing flash-attn with no build isolation..."
-pip install flash-attn==2.7.4.post1
+# echo "Installing flash-attn with no build isolation..."
+# pip install flash-attn==2.7.4.post1
 
 echo "Installing vagen package..."
-pip install -e .
+pip install -e . --no-deps
 
 echo "Installing Sokoban dependencies"
 pip install 'gym'
@@ -34,3 +34,5 @@ pip install "gymnasium[toy-text]"
 
 pip install together # together ai api for process reward
 echo "Installation complete, to install dependencies for other environments, refer to env/readme"
+
+pip install transformers==4.49.0
